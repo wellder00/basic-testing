@@ -3,7 +3,7 @@ export enum Action {
   Subtract = '-',
   Divide = '/',
   Multiply = '*',
-  Exponentiate = '^',
+  Exponential = '^',
 }
 
 type RawCalculatorInput = {
@@ -33,7 +33,7 @@ export const simpleCalculator = (
         return a * b;
       case Action.Divide:
         return a / b;
-      case Action.Exponentiate:
+      case Action.Exponential:
         return a ** b;
       default:
         throw new Error('Something went wrong!');
