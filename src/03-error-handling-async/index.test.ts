@@ -9,9 +9,9 @@ import {
 
 let hello: string;
 
-beforeAll(() => {
+beforeAll((() => {
   hello = 'Hello';
-});
+}))
 
 describe('resolveValue', () => {
   test('should resolve provided value', async () => {
@@ -21,22 +21,22 @@ describe('resolveValue', () => {
 
 describe('throwError', () => {
   test('should throw error with provided message', () => {
-    expect(() => throwError(hello)).toThrowError(hello);
+    expect(() => throwError(hello)).toThrowError(hello)
   });
 
   test('should throw error with default message if message is not provided', () => {
-    expect(() => throwError()).toThrowError('Oops!');
+    expect(() => throwError()).toThrowError('Oops!')
   });
 });
 
 describe('throwCustomError', () => {
   test('should throw custom error', () => {
-    expect(() => throwCustomError()).toThrowError(MyAwesomeError);
+    expect(() => throwCustomError()).toThrowError(MyAwesomeError)
   });
 });
 
 describe('rejectCustomError', () => {
   test('should reject custom error', async () => {
-    await expect(rejectCustomError()).rejects.toThrowError(MyAwesomeError);
+    await expect(rejectCustomError()).rejects.toThrowError(MyAwesomeError)
   });
 });
